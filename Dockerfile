@@ -3,10 +3,11 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY proyecto_Python.py .
-
+COPY requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 5000
+COPY proyecto_Python.py .
+
+EXPOSE 8080
 
 CMD ["python", "proyecto_Python.py"]
